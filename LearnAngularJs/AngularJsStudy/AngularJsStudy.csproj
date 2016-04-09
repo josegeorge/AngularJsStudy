@@ -66,6 +66,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Chapter2\10_ng-repeat_acrossMultipleHTMLelements.html" />
+    <Content Include="Chapter2\2_creating-controller.html" />
+    <Content Include="Chapter2\1_module-example.html" />
+    <Content Include="Chapter2\3_hello-controller.html" />
+    <Content Include="Chapter2\4_hello-controller-withclick.html" />
+    <Content Include="Chapter2\8_ng-repeat-helperVariables.html" />
+    <Content Include="Chapter2\5_ng-repeat-example-1.html" />
+    <Content Include="Chapter2\7_ng-repeat_on-objects.html" />
+    <Content Include="Chapter2\6_more-directives.html" />
+    <Content Include="Chapter2\9_cache-or-reuse-object.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

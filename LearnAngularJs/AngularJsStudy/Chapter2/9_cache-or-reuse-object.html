@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-controller="mainCtrl as ctrl">
+
+<button ng-click="ctrl.changeNotes()">click me to ChangeNotes</button>
+<br/>
+DOM Elements change every time someone clicks
+<div ng-repeat="note in ctrl.notes1">
+    {{note.$$hashKey}} :: 
+    <span class="label">{{note.label}}</span>
+    <span class="author" ng-bind="note.done"></span>
+</div>
+<br/>
+    *************
+    <br />
+    DOM Elements change every time someone clicks
+    <div ng-repeat="note in ctrl.notes2 track by note.id">
+        {{note.$$hashKey}} :: 
+        <span class="label">{{note.label}}</span>
+        <span class="author" ng-bind="note.done"></span>
+    </div>
+
+
+
+<script src="../Scripts/angular.min.js"></script>
+<script type="text/javascript">
+    
+    angular.module('notesApp',[]).controller('mainCtrl',[function() {
+
+        var self = this;
+        var notes = [
+            { id: 1, label: 'FirstNote', done: true, someRandom: 323423 },
+            { id: 3, label: 'ThirdNote', done: false, someRandom: 435 },
+            { id: 2, label: 'SecondNote', done: false, someRandom: 43563 },
+            { id: 4, label: 'ForthNote', done: false, someRandom: 78567 }
+        ];
+
+        self.notes1 = angular.copy(notes);
+        self.notes2 = angular.copy(notes);
+
+        self.changeNotes = function() {
+            notes = [
+           { id: 1, label: 'Changed FirstNote', done: true, someRandom: 567456 },
+           { id: 2, label: 'Changed SecondNote', done: true, someRandom: 2376 },
+           { id: 3, label: 'Changed ThirdNote', done: false, someRandom: 9907 },
+           { id: 4, label: 'Changed ForthNote', done: true, someRandom: 234675 }
+            ];
+          self.notes1 = angular.copy(notes);
+          self.notes2 = angular.copy(notes);
+        };
+
+    }])
+
+
+</script>
+
+
+</body>
+</html>

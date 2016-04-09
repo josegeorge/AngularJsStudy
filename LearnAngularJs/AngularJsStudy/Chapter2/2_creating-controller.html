@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <title>Hello AngularJS contrller study</title>
+	<meta charset="utf-8" />
+</head>
+<body ng-controller="MainCtrl">
+    Hello {{1+1}}nd times AngularJS
+
+    <script src="../Scripts/angular.min.js"></script>
+
+    <script type="text/javascript">
+
+        angular.module('notesApp', [])
+        .controller('MainCtrl', [function() {
+                console.log('MainCtrl has been created....');
+            }]);
+
+    </script>
+</body>
+</html>
